@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AIS5G Internet Packages</title>
     <style>
-        
         body {
             font-family: Arial, sans-serif;
             display: flex;
@@ -13,48 +12,86 @@
             justify-content: center;
             background-color: #e8f5e9;
             padding: 20px;
+            margin: 0;
         }
+
+        /* Scrolling Header */
         .header {
-        width: 100%;
-        background: #4CAF50;
-        color: white;
-        font-size: 18px;
-        font-weight: bold;
-        padding: 10px 0;
-        text-align: center;
-    }
+            width: 100%;
+            background: #4CAF50;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 0;
+            text-align: center;
+            overflow: hidden;
+            white-space: nowrap;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .scrolling-text {
+            display: inline-block;
+            animation: marquee 15s linear infinite;
+        }
+
+        .header:hover .scrolling-text {
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+
+        /* Package Cards */
+        .container {
+            margin-top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+        }
+
         .package {
-            background: #46ae49;
+            background: #4CAF50;
             border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(50, 113, 75, 0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             padding: 20px;
             margin: 15px;
             width: 280px;
             text-align: center;
             transition: transform 0.3s ease-in-out;
-            color: rgb(200, 238, 209);
+            color: white;
         }
+
         .package:hover {
             transform: scale(1.08);
         }
+
         .package h2 {
-            background: rgba(255, 255, 255, 0.233);
+            background: rgba(255, 255, 255, 0.2);
             padding: 10px;
-            border-radius: 20px 20px 0 0;
-            font-size: 18px;
+            border-radius: 15px 15px 0 0;
+            font-size: 16px;
         }
+
         .package p strong {
             font-size: 22px;
         }
+
         .price {
-            font-size: 17px;
+            font-size: 16px;
             font-weight: bold;
-            color: #ffffff;
+            color: #c8e6c9;
             margin: 10px 0;
         }
+
         .contact-btn {
             display: block;
-            background: #ffffff;
+            background: #c8e6c9;
             color: #1b5e20;
             text-decoration: none;
             padding: 12px;
@@ -63,44 +100,50 @@
             font-size: 18px;
             font-weight: bold;
         }
+
         .contact-btn:hover {
             background: #a5d6a7;
             color: white;
         }
+
         .speed-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
         .speed {
             font-style: italic;
             text-align: left;
-            color: #eff7a6;
         }
+
         .day {
-        font-weight: bold;
-        font-size: 18px;
-        text-align: right;
-        color: #50f590; /* Beautiful blue */
-    }
+            font-weight: bold;
+            font-size: 18px;
+            text-align: right;
+            color: #42a5f5; /* Beautiful blue */
+        }
+
         .footer {
-        background: #4CAF50;
-        color: white;
-        font-size: 18px;
-        font-weight: bold;
-        padding: 10px 0;
-        text-align: center;
-        width: 100%;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            color: #555;
+            padding: 10px 0;
         }
     </style>
 </head>
 <body>
+
 <!-- Scrolling Header -->
 <div class="header">
-    <marquee behavior="scroll" direction="left">
-        AIS5G Internet packages, you can choose the internet packages as you need! Base on GB, Mbps, and unlimited internet.
-    </marquee>
+    <div class="scrolling-text">
+        AIS5G Internet packages, you can choose the internet packages as you need! Based on GB, Mbps, and unlimited internet.
+    </div>
 </div>
+
+<div class="container"></div>
+
 <script>
     const packages = [
         { day: 1, gb: "1GB", price: 20 }, { day: 3, gb: "3GB", price: 40 }, { day: 5, gb: "5GB", price: 60 }, { day: 7, gb: "7GB", price: 80 },
@@ -110,11 +153,6 @@
         { day: 1, gb: "10Mbps unlimited", price: 50 }, { day: 3, gb: "10Mbps unlimited", price: 70 }, { day: 5, gb: "10Mbps unlimited", price: 120 }, { day: 7, gb: "10Mbps unlimited", price: 160 },
         { day: 1, gb: "Unlimited", price: 70 }, { day: 3, gb: "Unlimited", price: 100 }, { day: 5, gb: "Unlimited", price: 150 }, { day: 7, gb: "Unlimited", price: 200 }
     ];
-
-     // JavaScript (Optional) to smooth scroll on hover pause
-     const marquee = document.querySelector("marquee");
-    marquee.addEventListener("mouseover", () => marquee.stop());
-    marquee.addEventListener("mouseout", () => marquee.start());
 
     function createPackageElement(pkg) {
         const packageDiv = document.createElement("div");
@@ -135,9 +173,10 @@
     }
 
     function renderPackages() {
+        const container = document.querySelector(".container");
         const fragment = document.createDocumentFragment();
         packages.forEach(pkg => fragment.appendChild(createPackageElement(pkg)));
-        document.body.appendChild(fragment);
+        container.appendChild(fragment);
     }
 
     renderPackages();
