@@ -1,0 +1,89 @@
+<style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #e8f5e9;
+            padding: 20px;
+        }
+        .header {
+        width: 100%;
+        background: #4CAF50;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px 0;
+        text-align: center;
+    }
+        .package {
+            background: #46ae49;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(50, 113, 75, 0.3);
+            padding: 20px;
+            margin: 15px;
+            width: 280px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            color: rgb(200, 238, 209);
+        }
+        .package:hover {
+            transform: scale(1.08);
+        }
+        .package h2 {
+            background: rgba(255, 255, 255, 0.233);
+            padding: 10px;
+            border-radius: 20px 20px 0 0;
+            font-size: 18px;
+        }
+        .package p strong {
+            font-size: 22px;
+        }
+        .price {
+            font-size: 17px;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 10px 0;
+        }
+        .contact-btn {
+            display: block;
+            background: #ffffff;
+            color: #1b5e20;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 25px;
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .contact-btn:hover {
+            background: #a5d6a7;
+            color: white;
+        }
+        .speed-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .speed {
+            font-style: italic;
+            text-align: left;
+            color: #eff7a6;
+        }
+        .day {
+        font-weight: bold;
+        font-size: 18px;
+        text-align: right;
+        color: #50f590; /* Beautiful blue */
+    }
+        .footer {
+        background: #4CAF50;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px 0;
+        text-align: center;
+        width: 100%;
+        }
+    </style>
