@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIS5G Internet Packages</title>
+    
+</head>
+<body>
+<!-- Scrolling Header -->
+<div class="header">
+    <marquee behavior="scroll" direction="left">
+        AIS5G Internet packages, you can choose the internet packages as you need! Base on GB, Mbps, and unlimited internet.
+    </marquee>
+</div>
+<script>
+    const packages = [
+        { day: 1, gb: "1GB", price: 20 }, { day: 3, gb: "3GB", price: 40 }, { day: 5, gb: "5GB", price: 60 }, { day: 7, gb: "7GB", price: 80 },
+        { day: 1, gb: "3GB", price: 30 }, { day: 3, gb: "5GB", price: 50 }, { day: 5, gb: "7GB", price: 80 }, { day: 7, gb: "10GB", price: 100 },
+        { day: 1, gb: "2Mbps unlimited", price: 20 }, { day: 3, gb: "2Mbps unlimited", price: 40 }, { day: 5, gb: "2Mbps unlimited", price: 60 }, { day: 7, gb: "2Mbps unlimited", price: 80 },
+        { day: 1, gb: "5Mbps unlimited", price: 30 }, { day: 3, gb: "5Mbps unlimited", price: 60 }, { day: 5, gb: "5Mbps unlimited", price: 90 }, { day: 7, gb: "5Mbps unlimited", price: 120 },
+        { day: 1, gb: "10Mbps unlimited", price: 50 }, { day: 3, gb: "10Mbps unlimited", price: 70 }, { day: 5, gb: "10Mbps unlimited", price: 120 }, { day: 7, gb: "10Mbps unlimited", price: 160 },
+        { day: 1, gb: "Unlimited", price: 70 }, { day: 3, gb: "Unlimited", price: 100 }, { day: 5, gb: "Unlimited", price: 150 }, { day: 7, gb: "Unlimited", price: 200 }
+    ];
+
+     // JavaScript (Optional) to smooth scroll on hover pause
+     const marquee = document.querySelector("marquee");
+    marquee.addEventListener("mouseover", () => marquee.stop());
+    marquee.addEventListener("mouseout", () => marquee.start());
+
+    function createPackageElement(pkg) {
+        const packageDiv = document.createElement("div");
+        packageDiv.classList.add("package");
+
+        packageDiv.innerHTML = `
+            <h2>AIS5G Internet</h2>
+            <p><strong>${pkg.gb}</strong></p>
+            <p class="price">${pkg.price} Baht</p>
+            <div class="speed-container">
+                <p class="speed">${pkg.gb.includes("unlimited") ? "" : "(up to 20-80Mbps)"}</p>
+                <p class="day">${pkg.day} Day</p>
+            </div>
+            <a href="contact.html" class="contact-btn">Contact</a>
+        `;
+
+        return packageDiv;
+    }
+
+    function renderPackages() {
+        const fragment = document.createDocumentFragment();
+        packages.forEach(pkg => fragment.appendChild(createPackageElement(pkg)));
+        document.body.appendChild(fragment);
+    }
+
+    renderPackages();
+</script>
+
+<div class="footer">
+    &copy; 2025 AIS Network | All Rights Reserved
+</div>
+
+</body>
+</html>
