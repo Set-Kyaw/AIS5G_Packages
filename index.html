@@ -91,8 +91,8 @@
 
         .contact-btn {
             display: block;
-            background: #c8e6c9;
-            color: #1b5e20;
+            background: #6ae476;
+            color: #0b5c10;
             text-decoration: none;
             padding: 12px;
             border-radius: 25px;
@@ -102,7 +102,7 @@
         }
 
         .contact-btn:hover {
-            background: #a5d6a7;
+            background: #6dbc91;
             color: white;
         }
 
@@ -126,10 +126,13 @@
 
         .footer {
             width: 100%;
-            text-align: center;
-            margin-top: 20px;
-            color: #555;
+            background: #4CAF50;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
             padding: 10px 0;
+            text-align: center;
+      
         }
     </style>
 </head>
@@ -150,7 +153,7 @@
         { day: 1, gb: "3GB", price: 30 }, { day: 3, gb: "5GB", price: 50 }, { day: 5, gb: "7GB", price: 80 }, { day: 7, gb: "10GB", price: 100 },
         { day: 1, gb: "5Mbps unlimited", price: 40 }, { day: 3, gb: "5Mbps unlimited", price: 60 }, { day: 5, gb: "5Mbps unlimited", price: 90 }, { day: 7, gb: "5Mbps unlimited", price: 120 },
         { day: 1, gb: "10Mbps unlimited", price: 50 }, { day: 3, gb: "10Mbps unlimited", price: 70 }, { day: 5, gb: "10Mbps unlimited", price: 120 }, { day: 7, gb: "10Mbps unlimited", price: 160 },
-        { day: 1, gb: "Unlimited", price: 70 }, { day: 3, gb: "Unlimited", price: 100 }, { day: 5, gb: "Unlimited", price: 150 }, { day: 7, gb: "Unlimited", price: 200 }
+        { day: 1, gb: "Unlimited", price: 70 }, { day: 3, gb: "Unlimited", price: 100 }, { day: 5, gb: "Unlimited", price: 150 }, { day: 7, gb: "Unlimited", price: 200 }, { day: 30, gb: "Unlimited", price: 500 }
     ];
 
     function createPackageElement(pkg) {
@@ -181,7 +184,7 @@
     renderPackages();
 </script>
 
-<div class="footer">
+<div class="footer" >
     &copy; 2025 AIS Network | All Rights Reserved
 </div>
 
