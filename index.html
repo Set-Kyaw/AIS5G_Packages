@@ -174,11 +174,20 @@
     }
 
     function renderPackages() {
-        const container = document.querySelector(".container");
-        const fragment = document.createDocumentFragment();
-        packages.forEach(pkg => fragment.appendChild(createPackageElement(pkg)));
-        container.appendChild(fragment);
-    }
+    const container = document.querySelector(".container");
+    const fragment = document.createDocumentFragment();
+
+    packages.forEach((pkg, index) => {
+        fragment.appendChild(createPackageElement(pkg));
+
+        // Insert a line break after every package with 7 days
+        if (pkg.day === 7) {
+            fragment.appendChild(document.createElement("br"));
+        }
+    });
+
+    container.appendChild(fragment);
+}
 
     renderPackages();
 </script>
