@@ -6,120 +6,74 @@
     <title>AIS5G Internet Packages</title>
     <style>
       body {
-            padding-top: 50px; /* Adjust based on header height */
+            padding-top: 50px;
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #e8f5e9;
+            background: #e8f5e9);
             padding: 20px;
             margin: 0;
-}
-
+        }
 
         h1 {
             color: #2e7d32;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 20px;            
         }
 
-      p {
-        width: max-content;
-        position: relative;
-        cursor: pointer;
-        }
-    p::after{
-        content: "";
-            position: absolute;
-        bottom: -5px;
-        height: 1px;
-        width: 100%;
-        left: 0;
-        background-color: #272727;
-        transition: 0.3s;
-        transition-timing-function: easy-in-out;
-        transform: scaleX(0)
-        }
-    p:hover::after
-        {
-        transform: scaleX(1)}
-
-        .contact-card a {
-        color: #ffd700; /* Gold color for better visibility */
-        font-weight: bold;
-        }
-
+        
         .contact-card {
             background: #46ae49;
             color: #f1f8e9;
             padding: 20px;
             margin: 15px;
+            margin-top: 20px;
             width: 90%;
             max-width: 600px;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(50, 113, 75, 0.3);
-            text-align: left;
+            text-align: justify;
         }
-
-        .contact-card h2 {
-            font-size: 22px;
-            margin-bottom: 5px;
-        }
-
-        .contact-card h4 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #c8e6c9;
-        }
-
-        .contact-card {
-    display: flex;
-    flex-direction: column;
-    align-items: left; /* Centers all content inside */
-    text-align: left;
-}
 
         .map {
-    width: 100%;
-    height: 250px;
-    border-radius: 10px;
-    border: 0;
-    display: block; /* Ensures it behaves as a block element */
-    margin: 0 auto; /* Centers it horizontally */
-}
-
+            width: 100%;
+            height: 750px;
+            border-radius: 10px;
+            border: 0;
+            display: block;
+            margin: 10px auto;
+        }
         @media (max-width: 600px) {
             .map {
-                height: 200px;
+                height: 750px;
             }
         }
 
-        /* Scrolling Header */
         .header {
             width: 100%;
             background: #4CAF50;
             color: white;
             font-size: 18px;
             font-weight: bold;
-            padding: 10px 0;
+            padding: 15px 0;
             text-align: center;
             overflow: hidden;
             white-space: nowrap;
             position: fixed;
             top: 0;
             left: 0;
+            display: block;
             z-index: 1000;
         }
 
         .scrolling-text {
             display: inline-block;
-            animation: marquee 15s linear infinite;
+            animation: marquee 12s linear infinite;
         }
-
         .header:hover .scrolling-text {
             animation-play-state: paused;
         }
-
         @keyframes marquee {
             from { transform: translateX(100%); }
             to { transform: translateX(-100%); }
@@ -131,55 +85,37 @@
             color: white;
             font-size: 18px;
             font-weight: bold;
-            padding: 10px 0;
+            padding: 15px 0;
             text-align: center;
             margin-top: 20px;
-      
         }
     </style>
 </head>
 <body>
-    <!-- Scrolling Header -->
-<div class="header">
-    <div class="scrolling-text">
-        AIS5G Internet packages, you can choose the internet packages as you need! Based on GB, Mbps, and unlimited internet.
+    <div class="header">
+        <div class="scrolling-text">
+            AIS5G Internet packages, you can contact our sale teams for your internet packages as you need! Based on GB, Mbps, and unlimited internet.
+        </div>
     </div>
-<div>
- <p>
-   "The blue Wi-Fi icon indicates the locations of AIS 5G Wi-Fi access points, allowing you to use the AIS 5G internet service at the nearest available spot."
- </p>
-</div>   
+
     
-</div>
-    <h1>Contact Our Sales Team</h1>
-
     <div class="contact-card">
-        <h2>ဗေတီး</h2>
-        <h4>ဒေါ်ပီရွှေဆိုင်၊ မြို့မဈေးကြီး</h4>
-        <p>Phone: <a href="tel:+66821590328" style="color: #fff;">+66 82 159 0328</a></p>
-        <p>Email: -</p>
-        <iframe src="https://www.google.com/maps/d/embed?mid=1pB4Ufg52vS7_B9u0EWrtf-jUdJQe2HQ&ehbc=2E312F" width="640" height="480"></iframe>
+            <p>"The blue Wi-Fi icon indicates the locations of AIS5G Wi-Fi access points, 
+                allowing you to use the AIS 5G internet service at the nearest available spot."</p>
+        <iframe class="map" src="https://www.google.com/maps/d/embed?mid=1pB4Ufg52vS7_B9u0EWrtf-jUdJQe2HQ&ehbc=2E312F"></iframe>
     </div>
 
-    <div class="contact-card">
-        <h2>အန်တီငယ်</h2>
-        <h4>အန်တီငယ် ထမင်းဆိုင်၊ မြို့မဈေးကြီးအနီး</h4>
-        <p>Phone: <a href="tel:+66821590328" style="color: #fff;">+66 82 159 0328</a></p>
-        <p>Email: -</p>
-        <iframe src="https://www.google.com/maps/d/embed?mid=1pB4Ufg52vS7_B9u0EWrtf-jUdJQe2HQ&ehbc=2E312F" width="640" height="480"></iframe>
-    </div>
+    <h2>Contact Our Sales Team</h2>
 
     <div class="contact-card">
-        <h2>Nang Phwe</h2>
-        <h4>နောင့်ဖွေး သင်္ဘောသီးထောင်းဆိုင်၊ မြို့မဈေးကြီးအနီး</h4>
-        <p>Phone: <a href="tel:+66821590328" style="color: #fff;">+66 82 159 0328</a></p>
-        <p>Email: -</p>
-        <iframe src="https://www.google.com/maps/d/embed?mid=1pB4Ufg52vS7_B9u0EWrtf-jUdJQe2HQ&ehbc=2E312F" width="640" height="480"></iframe>
-    </div>
+            <strong>ဗေတီး</strong> - ဒေါ်ပီရွှေဆိုင်၊ မြို့မဈေးကြီး | Phone: <a href="tel:+66821590328">+66 82 159 0328</a></div>
+    <div class="contact-card">
+            <strong>အန်တီငယ်</strong> - အန်တီငယ် ထမင်းဆိုင်၊ မြို့မဈေးကြီးအနီး | Phone: <a href="tel:+66821590328">+66 82 159 0328</a></div>
+    <div class="contact-card">
+            <strong>Nang Phwe</strong> - နောင့်ဖွေး သင်္ဘောသီးထောင်းဆိုင်၊ မြို့မဈေးကြီးအနီး | Phone: <a href="tel:+66821590328">+66 82 159 0328</a></div>
 
-    <div class="footer" >
+    <div class="footer">
         &copy; 2025 AIS Network | All Rights Reserved
     </div>
-
 </body>
 </html>
