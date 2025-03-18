@@ -67,15 +67,6 @@
             color: white;
         }
 
-        .break {
-            width: 100%;
-            height: 2px;
-            clear: both; /* Ensures it breaks in case of float */
-            display: block;
-            border: 2px, ridge, gold;
-}
-
-
         .package:hover {
             transform: scale(1.08);
         }
@@ -188,13 +179,6 @@
 
     packages.forEach(pkg => {
         fragment.appendChild(createPackageElement(pkg));
-
-        // Insert a break container after every 7-day package
-        if (pkg.day === 7) {
-            const breakDiv = document.createElement("div");
-            breakDiv.classList.add("break");
-            fragment.appendChild(breakDiv);
-        }
     });
 
     container.appendChild(fragment);
