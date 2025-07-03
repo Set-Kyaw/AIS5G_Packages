@@ -199,20 +199,20 @@
         packageDiv.innerHTML = `
             <h2>AIS5G Internet</h2>
             <p><strong>${pkg.gb}</strong></p>
-            <p class="price">
-                <strong>$${pkg.price_usd}</strong>
-                <div class="currency-line">
-                    <span class="currency" title="Chinese Yuan">
-                        <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1e8-1f1f3.svg" alt="Yuan"> ¥${pkg.price_yuan}
-                    </span>
-                    <span class="currency" title="Thai Baht">
-                        <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1f9-1f1ed.svg" alt="Baht"> ${pkg.price_baht}฿
-                    </span>
-                    <span class="currency" title="Myanmar Kyat">
-                        <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1f2-1f1f2.svg" alt="MMK"> Ks${pkg.price_mmk}
-                    </span>
-                </div>
-            </p>
+           <p class="price">
+            <strong>$${pkg.price_usd}</strong>
+            <div class="currency-line">
+                <span class="currency" title="Chinese Yuan">
+                    <img src="https://twemoji.maxcdn.com/v/latest/72x72/1f1e8-1f1f3.png" alt="Yuan"> ¥${pkg.price_yuan}
+                </span>
+                <span class="currency" title="Thai Baht">
+                    <img src="https://twemoji.maxcdn.com/v/latest/72x72/1f1f9-1f1ed.png" alt="Baht"> ${pkg.price_baht}฿
+                </span>
+                <span class="currency" title="Myanmar Kyat">
+                    <img src="https://twemoji.maxcdn.com/v/latest/72x72/1f1f2-1f1f2.png" alt="MMK"> Ks${pkg.price_mmk}
+                </span>
+            </div>
+        </p>
             <div class="speed-container">
                 <p class="speed">${pkg.gb.toLowerCase().includes("unlimited") ? "" : "(up to 20-80Mbps)"}</p>
                 <p class="day">${pkg.day} Day</p>
