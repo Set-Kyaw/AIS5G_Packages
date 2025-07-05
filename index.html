@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AIS5G Internet Packages</title>
+   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -87,6 +88,40 @@
       color: gold;
       margin: 10px 0;
     }
+
+
+            .currency-line {
+            font-size: 14px;
+            margin-top: 6px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .currency {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+        }
+
+        .currency img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .contact-btn {
+            display: block;
+            background: #6ae476;
+            color: #0b5c10;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 25px;
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
 
     .contact-btn {
       display: block;
@@ -178,51 +213,73 @@
 <div class="container"></div>
 
 <script>
-  const packages = [
-    { day: 1, gb: "1GB", price: 20 }, { day: 3, gb: "3GB", price: 40 }, { day: 5, gb: "5GB", price: 60 }, { day: 7, gb: "7GB", price: 80 },
-    { day: 1, gb: "3GB", price: 30 }, { day: 3, gb: "6GB", price: 50 }, { day: 5, gb: "9GB", price: 80 }, { day: 7, gb: "12GB", price: 100 },
-    { day: 1, gb: "10Mbps unlimited", price: 50 }, { day: 3, gb: "10Mbps unlimited", price: 100 }, { day: 5, gb: "10Mbps unlimited", price: 150 }, { day: 7, gb: "10Mbps unlimited", price: 200 },
-    { day: 1, gb: "Unlimited", price: 70 }, { day: 3, gb: "Unlimited", price: 130 }, { day: 5, gb: "Unlimited", price: 200 }, { day: 7, gb: "Unlimited", price: 250 }, { day: 30, gb: "Unlimited", price: 500 }
-  ];
+    const packages = [
+        { day: 1, gb: "1GB", price_usd:0.7, price_yuan:5, price_baht:20, price_mmk:3000 }, 
+        { day: 3, gb: "3GB", price_usd:1.0, price_yuan:7, price_baht:30, price_mmk:5000 }, 
+        { day: 5, gb: "5GB", price_usd:1.3, price_yuan:9, price_baht:40, price_mmk:7000 }, 
+        { day: 7, gb: "7GB", price_usd:1.6, price_yuan:11, price_baht:50, price_mmk:9000 },
 
-  function createPackageElement(pkg) {
-    const packageDiv = document.createElement("div");
-    packageDiv.classList.add("package");
-    packageDiv.innerHTML = `
-      <h2>AIS5G Internet</h2>
-      <p><strong>${pkg.gb}</strong></p>
-      <p class="price">${pkg.price} Baht</p>
-      <div class="speed-container">
-        <p class="speed">${pkg.gb.includes("unlimited") ? "" : "(up to 20-80Mbps)"}</p>
-        <p class="day">${pkg.day} Day</p>
-      </div>
-      <a href="contact.html" class="contact-btn">Contact</a>
-    `;
-    return packageDiv;
-  }
+        { day: 1, gb: "3GB", price_usd:1.2, price_yuan:8, price_baht:30, price_mmk:4000 }, 
+        { day: 3, gb: "6GB", price_usd:1.8, price_yuan:10, price_baht:50, price_mmk:7000 }, 
+        { day: 5, gb: "9GB", price_usd:2.4, price_yuan:15, price_baht:70, price_mmk:9000 }, 
+        { day: 7, gb: "12GB", price_usd:3.0, price_yuan:20, price_baht:90, price_mmk:12000 },
 
-  function renderPackages() {
-    const container = document.querySelector(".container");
-    const fragment = document.createDocumentFragment();
-    packages.forEach(pkg => {
-      fragment.appendChild(createPackageElement(pkg));
-    });
-    container.appendChild(fragment);
-  }
+        { day: 1, gb: "10Mbps unlimited",  price_usd:1.7, price_yuan:10, price_baht:50, price_mmk:7000 }, 
+        { day: 3, gb: "10Mbps unlimited",  price_usd:2.5, price_yuan:15, price_baht:70, price_mmk:10000 },  
+        { day: 5, gb: "10Mbps unlimited",  price_usd:3.1, price_yuan:20, price_baht:110, price_mmk:13000 },  
+        { day: 7, gb: "10Mbps unlimited",  price_usd:3.8, price_yuan:25, price_baht:140, price_mmk:15000 },
 
-  renderPackages();
+        { day: 1, gb: "Unlimited", price_usd:2.0, price_yuan:14, price_baht:60, price_mmk:8000 }, 
+        { day: 3, gb: "Unlimited", price_usd:2.7, price_yuan:19, price_baht:80, price_mmk:12000 },  
+        { day: 5, gb: "Unlimited", price_usd:3.4, price_yuan:24, price_baht:120, price_mmk:16000 }, 
+        { day: 7, gb: "Unlimited", price_usd:4.1, price_yuan:28, price_baht:150, price_mmk:20000 },
 
-  // Dark Mode Script
-  const toggle = document.getElementById("darkToggle");
-  const isDark = localStorage.getItem("darkMode") === "true";
-  document.body.classList.toggle("dark-mode", isDark);
-  toggle.textContent = isDark ? "🌞" : "🌙";
+        { day: 30, gb: "Unlimited", price_usd:20, price_yuan:140, price_baht:600, price_mmk:80000 }
+    ];
 
-  toggle.addEventListener("click", () => {
-    const isNowDark = document.body.classList.toggle("dark-mode");
-    toggle.textContent = isNowDark ? "🌞" : "🌙";
-    localStorage.setItem("darkMode", isNowDark);
-  });
+    function createPackageElement(pkg) {
+        const packageDiv = document.createElement("div");
+        packageDiv.classList.add("package");
+
+        packageDiv.innerHTML = `
+            <h2>AIS5G Internet</h2>
+            <p><strong>${pkg.gb}</strong></p>
+           <p class="price">
+    <strong>$${pkg.price_usd}</strong>
+    <div class="currency-line">
+        <span class="currency" title="Chinese Yuan">
+            <img src="icons/yuan.png" alt="Yuan"> ${pkg.price_yuan}
+        </span>
+        <span class="currency" title="Thai Baht">
+            <img src="icons/baht.png" alt="Baht"> ${pkg.price_baht}
+        </span>
+        <span class="currency" title="Myanmar Kyat">
+            <img src="icons/mmk.png" alt="MMK"> ${pkg.price_mmk}
+        </span>
+    </div>
+</p>
+            <div class="speed-container">
+                <p class="speed">${pkg.gb.toLowerCase().includes("unlimited") ? "" : "(up to 20-80Mbps)"}</p>
+                <p class="day">${pkg.day} Day</p>
+            </div>
+            <a href="contact.html" class="contact-btn">Contact</a>
+        `;
+
+        return packageDiv;
+    }
+
+    function renderPackages() {
+        const container = document.querySelector(".container");
+        const fragment = document.createDocumentFragment();
+
+        packages.forEach(pkg => {
+            fragment.appendChild(createPackageElement(pkg));
+        });
+
+        container.appendChild(fragment);
+    }
+
+    renderPackages();
 </script>
 
 <div class="footer">
