@@ -1,245 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIS5G Internet Packages</title>
-    <meta name="description" content="AIS5G Internet packages based on GB, speed, and unlimited usage. Choose your best plan.">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            background-color: #e8f5e9;
-            padding: 20px;
-            margin: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - AIS5G Internet</title>
+  <style>
+    body {
+      padding-top: 100px;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #e8f5e9;
+      padding: 20px;
+      margin: 0;
+      color: #000;
+    }
 
-        .header {
-            width: 100%;
-            background: #4CAF50;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 10px 0;
-            text-align: center;
-            overflow: hidden;
-            white-space: nowrap;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
+    h2 {
+      color: #2e7d32;
+      margin-top: 30px;
+      text-align: center;
+    }
 
-        .scrolling-text {
-            display: inline-block;
-            animation: marquee 15s linear infinite;
-        }
+    .contact-card,
+    .contact-card2,
+    .contact-card3,
+    .contact-card4 {
+      background: #46ae49;
+      color: #f1f8e9;
+      padding: 20px;
+      margin: 15px;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(50, 113, 75, 0.3);
+      text-align: justify;
+      transition: all 0.3s ease-in-out;
+    }
 
-        .header:hover .scrolling-text {
-            animation-play-state: paused;
-        }
+    .contact-card2:hover,
+    .contact-card3:hover,
+    .contact-card4:hover {
+      background: #258728;
+      border-radius: 30px;
+    }
 
-        @keyframes marquee {
-            from { transform: translateX(100%); }
-            to { transform: translateX(-100%); }
-        }
+    p img {
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
 
-        .container {
-            margin-top: 70px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            width: 100%;
-        }
+    .map {
+      width: 100%;
+      height: 750px;
+      border-radius: 10px;
+      border: 0;
+      display: block;
+      margin: 10px auto;
+    }
 
-        .package {
-            background: #4CAF50;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            margin: 15px;
-            width: 280px;
-            text-align: center;
-            transition: transform 0.3s ease-in-out;
-            color: white;
-        }
+    @media (max-width: 600px) {
+      .map {
+        height: 500px;
+      }
+    }
 
-        .package:hover {
-            transform: scale(1.08);
-        }
+    .header {
+      width: 100%;
+      background: #4CAF50;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 15px 0;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: block;
+      z-index: 1000;
+    }
 
-        .package h2 {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px;
-            border-radius: 15px 15px 0 0;
-            font-size: 16px;
-        }
+    .scrolling-text {
+      display: inline-block;
+      animation: marquee 12s linear infinite;
+    }
 
-        .package p strong {
-            font-size: 22px;
-        }
+    .header:hover .scrolling-text {
+      animation-play-state: paused;
+    }
 
-        .price {
-            font-size: 16px;
-            font-weight: bold;
-            color: gold;
-            margin: 10px 0;
-        }
+    @keyframes marquee {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
 
-        .currency-line {
-            font-size: 14px;
-            margin-top: 6px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
+    .footer {
+      width: 100%;
+      background: #4CAF50;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 15px 0;
+      text-align: center;
+      margin-top: 40px;
+    }
 
-        .currency {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            white-space: nowrap;
-        }
+    .back-home {
+      margin-top: 120px;
+      text-align: center;
+    }
 
-        .currency img {
-            width: 16px;
-            height: 16px;
-        }
+    .back-home a {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
 
-        .contact-btn {
-            display: block;
-            background: #6ae476;
-            color: #0b5c10;
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 25px;
-            margin-top: 15px;
-            font-size: 18px;
-            font-weight: bold;
-        }
+    .back-home a:hover {
+      background-color: #388e3c;
+    }
 
-        .contact-btn:hover {
-            background: #6dbc91;
-            color: white;
-        }
+    form {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      width: 90%;
+      margin: 20px auto;
+      color: #000;
+    }
 
-        .speed-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      color: #000;
+      background: #fff;
+    }
 
-        .speed {
-            font-style: italic;
-            text-align: left;
-        }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-        .day {
-            font-weight: bold;
-            font-size: 18px;
-            text-align: right;
-            color: #c0e396;
-        }
+    button:hover {
+      background: #388e3c;
+    }
 
-        .footer {
-            width: 100%;
-            background: #4CAF50;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 10px 0;
-            text-align: center;
-        }
-    </style>
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    body.dark-mode .contact-card,
+    body.dark-mode .contact-card2,
+    body.dark-mode .contact-card3,
+    body.dark-mode .contact-card4,
+    body.dark-mode form,
+    body.dark-mode .header,
+    body.dark-mode .footer,
+    body.dark-mode .back-home a {
+      background-color: #1e1e1e !important;
+      color: #f1f1f1 !important;
+    }
+
+    body.dark-mode a {
+      color: #90caf9 !important;
+    }
+
+    body.dark-mode input,
+    body.dark-mode textarea {
+      background: #333;
+      color: #f1f1f1;
+      border: 1px solid #555;
+    }
+
+    .dark-toggle {
+      position: fixed;
+      top: 12px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 2000;
+      color: #4CAF50;
+      user-select: none;
+    }
+
+    .dark-toggle:hover {
+      color: #81c784;
+    }
+  </style>
 </head>
 <body>
 
-<!-- Scrolling Header -->
-<div class="header">
+  <div class="header">
     <div class="scrolling-text">
-        AIS5G Internet packages, you can choose the internet packages as you need! Based on GB, Mbps, and unlimited internet.
+      AIS5G Internet packages – contact our sales team for top-up and internet help!
     </div>
-</div>
+  </div>
 
-<div class="container"></div>
+  <button class="dark-toggle" id="darkToggle" title="Toggle dark mode">🌙</button>
 
-<script>
-    const packages = [
-        { day: 1, gb: "1GB", price_usd:0.7, price_yuan:5, price_baht:20, price_mmk:3000 }, 
-        { day: 3, gb: "3GB", price_usd:1.0, price_yuan:7, price_baht:30, price_mmk:5000 }, 
-        { day: 5, gb: "5GB", price_usd:1.3, price_yuan:9, price_baht:40, price_mmk:7000 }, 
-        { day: 7, gb: "7GB", price_usd:1.6, price_yuan:11, price_baht:50, price_mmk:9000 },
+  <div class="back-home">
+    <a href="index.html">← Back to Home</a>
+  </div>
 
-        { day: 1, gb: "3GB", price_usd:1.2, price_yuan:8, price_baht:30, price_mmk:4000 }, 
-        { day: 3, gb: "6GB", price_usd:1.8, price_yuan:10, price_baht:50, price_mmk:7000 }, 
-        { day: 5, gb: "9GB", price_usd:2.4, price_yuan:15, price_baht:70, price_mmk:9000 }, 
-        { day: 7, gb: "12GB", price_usd:3.0, price_yuan:20, price_baht:90, price_mmk:12000 },
+  <div class="contact-card">
+    <p>
+      "The blue Wi-Fi icon 
+      <img src="icons/wifi.png" alt="WiFi"> indicates AIS5G Wi-Fi access points nearby."
+    </p>
+    <p>
+      "The green currency icon 
+      <img src="icons/dollarsign.png" alt="Dollar Sign"> shows where you can top-up with vouchers (one-stop shops)."
+    </p>
+    <iframe class="map" src="https://www.google.com/maps/d/embed?mid=1pB4Ufg52vS7_B9u0EWrtf-jUdJQe2HQ&ehbc=2E312F"></iframe>
+  </div>
 
-        { day: 1, gb: "10Mbps unlimited",  price_usd:1.7, price_yuan:10, price_baht:50, price_mmk:7000 }, 
-        { day: 3, gb: "10Mbps unlimited",  price_usd:2.5, price_yuan:15, price_baht:70, price_mmk:10000 },  
-        { day: 5, gb: "10Mbps unlimited",  price_usd:3.1, price_yuan:20, price_baht:110, price_mmk:13000 },  
-        { day: 7, gb: "10Mbps unlimited",  price_usd:3.8, price_yuan:25, price_baht:140, price_mmk:15000 },
+  <h2>Contact Our Sales Team</h2>
 
-        { day: 1, gb: "Unlimited", price_usd:2.0, price_yuan:14, price_baht:60, price_mmk:8000 }, 
-        { day: 3, gb: "Unlimited", price_usd:2.7, price_yuan:19, price_baht:80, price_mmk:12000 },  
-        { day: 5, gb: "Unlimited", price_usd:3.4, price_yuan:24, price_baht:120, price_mmk:16000 }, 
-        { day: 7, gb: "Unlimited", price_usd:4.1, price_yuan:28, price_baht:150, price_mmk:20000 },
+  <div class="contact-card2">
+    <strong>အန်တီငယ်</strong><br />
+    အန်တီငယ် ထမင်းဆိုင်၊ မြို့မဈေးကြီးအနီး <br />
+    Phone: <a href="tel:+959428314048" style="color: #e8f5e9;">+95 9428314048</a>
+  </div>
 
-        { day: 30, gb: "Unlimited", price_usd:20, price_yuan:140, price_baht:600, price_mmk:80000 }
-    ];
+  <div class="contact-card3">
+    <strong>ဗေတီး</strong><br />
+    ဒေါ်ပီရွှေဆိုင်၊ မြို့မဈေးကြီး <br />
+    Phone: <a href="tel:+959448068038" style="color: #e8f5e9;">+95 9448068038</a>
+  </div>
 
-    function createPackageElement(pkg) {
-        const packageDiv = document.createElement("div");
-        packageDiv.classList.add("package");
+  <div class="contact-card4">
+    <strong>Nang Phwe</strong><br />
+    နောင့်ဖွေး သင်္ဘောသီးထောင်းဆိုင်၊ မြို့မဈေးကြီးအနီး <br />
+    Phone: <a href="tel:+959424912985" style="color: #e8f5e9;">+95 9424912985</a>
+  </div>
 
-        packageDiv.innerHTML = `
-            <h2>AIS5G Internet</h2>
-            <p><strong>${pkg.gb}</strong></p>
-           <p class="price">
-    <strong>$${pkg.price_usd}</strong>
-    <div class="currency-line">
-        <span class="currency" title="Chinese Yuan">
-            <img src="icons/yuan.png" alt="Yuan"> ${pkg.price_yuan}
-        </span>
-        <span class="currency" title="Thai Baht">
-            <img src="icons/baht.png" alt="Baht"> ${pkg.price_baht}
-        </span>
-        <span class="currency" title="Myanmar Kyat">
-            <img src="icons/mmk.png" alt="MMK"> ${pkg.price_mmk}
-        </span>
-    </div>
-</p>
-            <div class="speed-container">
-                <p class="speed">${pkg.gb.toLowerCase().includes("unlimited") ? "" : "(up to 20-80Mbps)"}</p>
-                <p class="day">${pkg.day} Day</p>
-            </div>
-            <a href="contact.html" class="contact-btn">Contact</a>
-        `;
+  <h2>Send Us a Message</h2>
 
-        return packageDiv;
-    }
+  <form action="https://formsubmit.co/your@email.com" method="POST">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
 
-    function renderPackages() {
-        const container = document.querySelector(".container");
-        const fragment = document.createDocumentFragment();
+    <label>Name:</label>
+    <input type="text" name="name" required>
 
-        packages.forEach(pkg => {
-            fragment.appendChild(createPackageElement(pkg));
-        });
+    <label>Email:</label>
+    <input type="email" name="email" required>
 
-        container.appendChild(fragment);
-    }
+    <label>Message:</label>
+    <textarea name="message" rows="4" required></textarea>
 
-    renderPackages();
-</script>
+    <button type="submit">Send Message</button>
+  </form>
 
-<div class="footer">
+  <div class="footer">
     &copy; 2025 AIS Network | All Rights Reserved
-</div>
+  </div>
 
+  <script>
+    const toggle = document.getElementById("darkToggle");
+    const isDark = localStorage.getItem("darkMode") === "true";
+
+    document.body.classList.toggle("dark-mode", isDark);
+    toggle.textContent = isDark ? "🌞" : "🌙";
+
+    toggle.addEventListener("click", () => {
+      const isNowDark = document.body.classList.toggle("dark-mode");
+      toggle.textContent = isNowDark ? "🌞" : "🌙";
+      localStorage.setItem("darkMode", isNowDark);
+    });
+  </script>
 </body>
 </html>
