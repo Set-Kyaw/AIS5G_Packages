@@ -2,70 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact - AIS5G Internet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIS5G Internet Packages</title>
   <style>
     body {
-      padding-top: 100px;
       font-family: Arial, sans-serif;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: #e8f5e9;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #e8f5e9;
       padding: 20px;
       margin: 0;
-      color: #000;
-    }
-
-    h2 {
-      color: #2e7d32;
-      margin-top: 30px;
-      text-align: center;
-    }
-
-    .contact-card,
-    .contact-card2,
-    .contact-card3,
-    .contact-card4 {
-      background: #46ae49;
-      color: #f1f8e9;
-      padding: 20px;
-      margin: 15px;
-      width: 90%;
-      max-width: 600px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(50, 113, 75, 0.3);
-      text-align: justify;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .contact-card2:hover,
-    .contact-card3:hover,
-    .contact-card4:hover {
-      background: #258728;
-      border-radius: 30px;
-    }
-
-    p img {
-      width: 16px;
-      height: 16px;
-      vertical-align: middle;
-      margin-left: 5px;
-    }
-
-    .map {
-      width: 100%;
-      height: 750px;
-      border-radius: 10px;
-      border: 0;
-      display: block;
-      margin: 10px auto;
-    }
-
-    @media (max-width: 600px) {
-      .map {
-        height: 500px;
-      }
+      padding-top: 60px;
     }
 
     .header {
@@ -74,20 +22,19 @@
       color: white;
       font-size: 18px;
       font-weight: bold;
-      padding: 15px 0;
+      padding: 10px 0;
       text-align: center;
       overflow: hidden;
       white-space: nowrap;
       position: fixed;
       top: 0;
       left: 0;
-      display: block;
       z-index: 1000;
     }
 
     .scrolling-text {
       display: inline-block;
-      animation: marquee 12s linear infinite;
+      animation: marquee 15s linear infinite;
     }
 
     .header:hover .scrolling-text {
@@ -99,199 +46,188 @@
       to { transform: translateX(-100%); }
     }
 
+    .container {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .package {
+      background: #4CAF50;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      margin: 15px;
+      width: 280px;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+      color: white;
+    }
+
+    .package:hover {
+      transform: scale(1.08);
+    }
+
+    .package h2 {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px;
+      border-radius: 15px 15px 0 0;
+      font-size: 16px;
+    }
+
+    .package p strong {
+      font-size: 22px;
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: bold;
+      color: gold;
+      margin: 10px 0;
+    }
+
+    .contact-btn {
+      display: block;
+      background: #6ae476;
+      color: #0b5c10;
+      text-decoration: none;
+      padding: 12px;
+      border-radius: 25px;
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .contact-btn:hover {
+      background: #6dbc91;
+      color: white;
+    }
+
+    .speed-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .speed {
+      font-style: italic;
+      text-align: left;
+    }
+
+    .day {
+      font-weight: bold;
+      font-size: 18px;
+      text-align: right;
+      color: #c0e396;
+    }
+
     .footer {
       width: 100%;
       background: #4CAF50;
       color: white;
       font-size: 18px;
       font-weight: bold;
-      padding: 15px 0;
+      padding: 10px 0;
       text-align: center;
-      margin-top: 40px;
+      margin-top: 30px;
     }
 
-    .back-home {
-      margin-top: 120px;
-      text-align: center;
-    }
-
-    .back-home a {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      transition: background 0.3s;
-    }
-
-    .back-home a:hover {
-      background-color: #388e3c;
-    }
-
-    form {
-      background: #ffffff;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      max-width: 600px;
-      width: 90%;
-      margin: 20px auto;
-      color: #000;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      color: #000;
-      background: #fff;
-    }
-
-    button {
-      background: #4CAF50;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 25px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #388e3c;
-    }
-
-    /* Dark Mode Styles */
+    /* Dark Mode */
     body.dark-mode {
       background-color: #121212;
       color: #ffffff;
     }
 
-    body.dark-mode .contact-card,
-    body.dark-mode .contact-card2,
-    body.dark-mode .contact-card3,
-    body.dark-mode .contact-card4,
-    body.dark-mode form,
-    body.dark-mode .header,
-    body.dark-mode .footer,
-    body.dark-mode .back-home a {
+    .dark-mode .package,
+    .dark-mode .header,
+    .dark-mode .footer,
+    .dark-mode .contact-btn {
       background-color: #1e1e1e !important;
       color: #f1f1f1 !important;
     }
 
-    body.dark-mode a {
-      color: #90caf9 !important;
-    }
-
-    body.dark-mode input,
-    body.dark-mode textarea {
-      background: #333;
-      color: #f1f1f1;
-      border: 1px solid #555;
+    .dark-mode .contact-btn {
+      background-color: #388e3c !important;
     }
 
     .dark-toggle {
       position: fixed;
-      top: 12px;
+      top: 10px;
       right: 15px;
       background: none;
       border: none;
       font-size: 24px;
       cursor: pointer;
       z-index: 2000;
-      color: #4CAF50;
-      user-select: none;
-    }
-
-    .dark-toggle:hover {
-      color: #81c784;
     }
   </style>
 </head>
 <body>
 
-  <div class="header">
-    <div class="scrolling-text">
-      AIS5G Internet packages – contact our sales team for top-up and internet help!
-    </div>
+<!-- 🌙 Dark Mode Toggle -->
+<button class="dark-toggle" id="darkToggle" title="Toggle dark mode">🌙</button>
+
+<div class="header">
+  <div class="scrolling-text">
+    AIS5G Internet packages, you can choose the internet packages as you need! Based on GB, Mbps, and unlimited internet.
   </div>
+</div>
 
-  <button class="dark-toggle" id="darkToggle" title="Toggle dark mode">🌙</button>
+<div class="container"></div>
 
-  <div class="back-home">
-    <a href="index.html">← Back to Home</a>
-  </div>
+<script>
+  const packages = [
+    { day: 1, gb: "1GB", price: 20 }, { day: 3, gb: "3GB", price: 40 }, { day: 5, gb: "5GB", price: 60 }, { day: 7, gb: "7GB", price: 80 },
+    { day: 1, gb: "3GB", price: 30 }, { day: 3, gb: "6GB", price: 50 }, { day: 5, gb: "9GB", price: 80 }, { day: 7, gb: "12GB", price: 100 },
+    { day: 1, gb: "10Mbps unlimited", price: 50 }, { day: 3, gb: "10Mbps unlimited", price: 100 }, { day: 5, gb: "10Mbps unlimited", price: 150 }, { day: 7, gb: "10Mbps unlimited", price: 200 },
+    { day: 1, gb: "Unlimited", price: 70 }, { day: 3, gb: "Unlimited", price: 130 }, { day: 5, gb: "Unlimited", price: 200 }, { day: 7, gb: "Unlimited", price: 250 }, { day: 30, gb: "Unlimited", price: 500 }
+  ];
 
-  <div class="contact-card">
-    <p>
-      "The blue Wi-Fi icon 
-      <img src="icons/wifi.png" alt="WiFi"> indicates AIS5G Wi-Fi access points nearby."
-    </p>
-    <p>
-      "The green currency icon 
-      <img src="icons/dollarsign.png" alt="Dollar Sign"> shows where you can top-up with vouchers (one-stop shops)."
-    </p>
-    <iframe class="map" src="https://www.google.com/maps/d/embed?mid=1pB4Ufg52vS7_B9u0EWrtf-jUdJQe2HQ&ehbc=2E312F"></iframe>
-  </div>
+  function createPackageElement(pkg) {
+    const packageDiv = document.createElement("div");
+    packageDiv.classList.add("package");
+    packageDiv.innerHTML = `
+      <h2>AIS5G Internet</h2>
+      <p><strong>${pkg.gb}</strong></p>
+      <p class="price">${pkg.price} Baht</p>
+      <div class="speed-container">
+        <p class="speed">${pkg.gb.includes("unlimited") ? "" : "(up to 20-80Mbps)"}</p>
+        <p class="day">${pkg.day} Day</p>
+      </div>
+      <a href="contact.html" class="contact-btn">Contact</a>
+    `;
+    return packageDiv;
+  }
 
-  <h2>Contact Our Sales Team</h2>
-
-  <div class="contact-card2">
-    <strong>အန်တီငယ်</strong><br />
-    အန်တီငယ် ထမင်းဆိုင်၊ မြို့မဈေးကြီးအနီး <br />
-    Phone: <a href="tel:+959428314048" style="color: #e8f5e9;">+95 9428314048</a>
-  </div>
-
-  <div class="contact-card3">
-    <strong>ဗေတီး</strong><br />
-    ဒေါ်ပီရွှေဆိုင်၊ မြို့မဈေးကြီး <br />
-    Phone: <a href="tel:+959448068038" style="color: #e8f5e9;">+95 9448068038</a>
-  </div>
-
-  <div class="contact-card4">
-    <strong>Nang Phwe</strong><br />
-    နောင့်ဖွေး သင်္ဘောသီးထောင်းဆိုင်၊ မြို့မဈေးကြီးအနီး <br />
-    Phone: <a href="tel:+959424912985" style="color: #e8f5e9;">+95 9424912985</a>
-  </div>
-
-  <h2>Send Us a Message</h2>
-
-  <form action="https://formsubmit.co/your@email.com" method="POST">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
-
-    <label>Name:</label>
-    <input type="text" name="name" required>
-
-    <label>Email:</label>
-    <input type="email" name="email" required>
-
-    <label>Message:</label>
-    <textarea name="message" rows="4" required></textarea>
-
-    <button type="submit">Send Message</button>
-  </form>
-
-  <div class="footer">
-    &copy; 2025 AIS Network | All Rights Reserved
-  </div>
-
-  <script>
-    const toggle = document.getElementById("darkToggle");
-    const isDark = localStorage.getItem("darkMode") === "true";
-
-    document.body.classList.toggle("dark-mode", isDark);
-    toggle.textContent = isDark ? "🌞" : "🌙";
-
-    toggle.addEventListener("click", () => {
-      const isNowDark = document.body.classList.toggle("dark-mode");
-      toggle.textContent = isNowDark ? "🌞" : "🌙";
-      localStorage.setItem("darkMode", isNowDark);
+  function renderPackages() {
+    const container = document.querySelector(".container");
+    const fragment = document.createDocumentFragment();
+    packages.forEach(pkg => {
+      fragment.appendChild(createPackageElement(pkg));
     });
-  </script>
+    container.appendChild(fragment);
+  }
+
+  renderPackages();
+
+  // Dark Mode Script
+  const toggle = document.getElementById("darkToggle");
+  const isDark = localStorage.getItem("darkMode") === "true";
+  document.body.classList.toggle("dark-mode", isDark);
+  toggle.textContent = isDark ? "🌞" : "🌙";
+
+  toggle.addEventListener("click", () => {
+    const isNowDark = document.body.classList.toggle("dark-mode");
+    toggle.textContent = isNowDark ? "🌞" : "🌙";
+    localStorage.setItem("darkMode", isNowDark);
+  });
+</script>
+
+<div class="footer">
+  &copy; 2025 AIS Network | All Rights Reserved
+</div>
+
 </body>
 </html>
