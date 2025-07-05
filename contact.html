@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact - AIS5G Internet</title>
   <style>
-   
     body {
-      padding-top: 600px; /* was 100px */
+      padding-top: 100px;
       font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
@@ -110,32 +109,99 @@
       margin-top: 40px;
     }
 
- .sticky-back {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  z-index: 999;
-  background-color: #4CAF50;
-  padding: 10px 20px;
-  border-radius: 25px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
+    .sticky-back {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 999;
+      background-color: #4CAF50;
+      padding: 10px 20px;
+      border-radius: 25px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
 
-.sticky-back a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-}
+    .sticky-back a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
 
-.sticky-back a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
+    .sticky-back a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    form {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      width: 90%;
+      margin: 20px auto;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #388e3c;
+    }
+
+    /* 🌙 DARK MODE STYLES */
+    body.dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    .dark-mode .contact-card,
+    .dark-mode .contact-card2,
+    .dark-mode .contact-card3,
+    .dark-mode .contact-card4,
+    .dark-mode form,
+    .dark-mode .header,
+    .dark-mode .footer,
+    .dark-mode .sticky-back {
+      background-color: #1e1e1e !important;
+      color: #f1f1f1;
+    }
+
+    .dark-mode a {
+      color: #90caf9;
+    }
+
+    .dark-toggle {
+      position: fixed;
+      top: 12px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 2000;
+    }
   </style>
 </head>
-
 <body>
+
+  <!-- 🌙 DARK MODE TOGGLE BUTTON -->
+  <button class="dark-toggle" id="darkToggle" title="Toggle dark mode">🌙</button>
 
   <div class="header">
     <div class="scrolling-text">
@@ -160,28 +226,40 @@
   <div class="contact-card2">
     <strong>အန်တီငယ်</strong><br />
     အန်တီငယ် ထမင်းဆိုင်၊ မြို့မဈေးကြီးအနီး <br />
-    Phone: <a href="tel:+959428314048" style="color: #e8f5e9;">+95 9428314048</a>
+    Phone: <a href="tel:+959428314048">+95 9428314048</a>
   </div>
 
   <div class="contact-card3">
     <strong>ဗေတီး</strong><br />
     ဒေါ်ပီရွှေဆိုင်၊ မြို့မဈေးကြီး <br />
-    Phone: <a href="tel:+959448068038" style="color: #e8f5e9;">+95 9448068038</a>
+    Phone: <a href="tel:+959448068038">+95 9448068038</a>
   </div>
 
   <div class="contact-card4">
     <strong>Nang Phwe</strong><br />
     နောင့်ဖွေး သင်္ဘောသီးထောင်းဆိုင်၊ မြို့မဈေးကြီးအနီး <br />
-    Phone: <a href="tel:+959424912985" style="color: #e8f5e9;">+95 9424912985</a>
+    Phone: <a href="tel:+959424912985">+95 9424912985</a>
   </div>
 
-  <div class="footer">
-    &copy; 2025 AIS Network | All Rights Reserved
-  </div>
-
+  <!-- 🔙 Back to Home Sticky Button -->
   <div class="sticky-back">
-  <a href="index.html">← Back to Home</a>
-</div>
+    <a href="index.html">← Back to Home</a>
+  </div>
+
+  <!-- 🌙 Dark Mode Script -->
+  <script>
+    const toggle = document.getElementById("darkToggle");
+    const isDark = localStorage.getItem("darkMode") === "true";
+
+    document.body.classList.toggle("dark-mode", isDark);
+    toggle.textContent = isDark ? "🌞" : "🌙";
+
+    toggle.addEventListener("click", () => {
+      const isNowDark = document.body.classList.toggle("dark-mode");
+      toggle.textContent = isNowDark ? "🌞" : "🌙";
+      localStorage.setItem("darkMode", isNowDark);
+    });
+  </script>
 
 </body>
 </html>
