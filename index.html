@@ -83,14 +83,18 @@
       font-size: 22px;
     }
 
-    .price {
+      /* For USD */
+      .price-usd {
+      color: DarkGoldenRod;
       font-size: 16px;
       font-weight: bold;
-      color: gold;
+      color: DarkGoldenRod;
       margin: 10px 0;
-    }
+      }
 
-    .currency-line {
+      /* For Chinese Yuan */
+      .currency-yuan {
+      color: FireBrick;
       font-size: 14px;
       margin-top: 6px;
       display: flex;
@@ -99,6 +103,27 @@
       gap: 10px;
     }
 
+      /* For Thai Baht */
+      .currency-baht {
+      color: MidnightBlue; 
+      font-size: 14px;
+      margin-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      }
+
+      /* For Myanmar Kyat */
+      .currency-kyat {
+      color: DarkMagenta;
+      font-size: 14px;
+      margin-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      }
     .currency {
       display: flex;
       align-items: center;
@@ -250,23 +275,24 @@
     { day: 30, gb: "Unlimited", price_usd:20, price_yuan:140, price_baht:600, price_mmk:80000 }
   ];
 
-  function createPackageElement(pkg) {
+function createPackageElement(pkg) {
     const packageDiv = document.createElement("div");
     packageDiv.classList.add("package");
 
     packageDiv.innerHTML = `
       <h2>AIS5G Internet</h2>
-      <p><strong>${pkg.gb}</strong></p>
+      <p><strong>$${pkg.price_usd}</strong></p>
       <p class="price">
-        <img src="icons/DollarYellow.png" alt="Dollar" width="22px" heigh="22px" ><strong>$${pkg.price_usd}</strong>
+        <img class="currency_main" src="icons/DollarYellow.png" alt="Dollar">
+        <strong class="price-usd">$${pkg.price_usd}</strong>
         <div class="currency-line">
-          <span class="currency" title="Chinese Yuan">
+          <span class="currency currency-yuan" title="Chinese Yuan">
             <img src="icons/YuanOrange.png" alt="Yuan"> ${pkg.price_yuan}
           </span>
-          <span class="currency" title="Thai Baht">
+          <span class="currency currency-baht" title="Thai Baht">
             <img src="icons/BahtBlue.png" alt="Baht"> ${pkg.price_baht}
           </span>
-          <span class="currency" title="Myanmar Kyat">
+          <span class="currency currency-kyat" title="Myanmar Kyat">
             <img src="icons/KyatPink.png" alt="MMK"> ${pkg.price_mmk}
           </span>
         </div>
@@ -279,7 +305,7 @@
     `;
 
     return packageDiv;
-  }
+}
 
   function renderPackages() {
     const container = document.querySelector(".container");
