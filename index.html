@@ -36,7 +36,7 @@
 
     .scrolling-text {
       display: inline-block;
-      animation: marquee 20s linear infinite;
+      animation: marquee 15s linear infinite;
     }
 
     .header:hover .scrolling-text {
@@ -83,18 +83,14 @@
       font-size: 22px;
     }
 
-      /* For USD */
-      .price-usd {
-      color: DarkGoldenRod;
+    .price {
       font-size: 16px;
       font-weight: bold;
-      color: DarkGoldenRod;
+      color: gold;
       margin: 10px 0;
-      }
+    }
 
-      /* For Chinese Yuan */
-      .currency-yuan {
-      color: FireBrick;
+    .currency-line {
       font-size: 14px;
       margin-top: 6px;
       display: flex;
@@ -103,27 +99,6 @@
       gap: 10px;
     }
 
-      /* For Thai Baht */
-      .currency-baht {
-      color: MidnightBlue; 
-      font-size: 14px;
-      margin-top: 6px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      }
-
-      /* For Myanmar Kyat */
-      .currency-kyat {
-      color: DarkMagenta;
-      font-size: 14px;
-      margin-top: 6px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      }
     .currency {
       display: flex;
       align-items: center;
@@ -275,25 +250,24 @@
     { day: 30, gb: "Unlimited", price_usd:20, price_yuan:140, price_baht:600, price_mmk:80000 }
   ];
 
-function createPackageElement(pkg) {
+  function createPackageElement(pkg) {
     const packageDiv = document.createElement("div");
     packageDiv.classList.add("package");
 
     packageDiv.innerHTML = `
       <h2>AIS5G Internet</h2>
-      <p><strong>$${pkg.price_usd}</strong></p>
+      <p><strong>${pkg.gb}</strong></p>
       <p class="price">
-        <img class="currency_main" src="icons/DollarYellow.png" alt="Dollar">
-        <strong class="price-usd">$${pkg.price_usd}</strong>
+        <strong>$${pkg.price_usd}</strong>
         <div class="currency-line">
-          <span class="currency currency-yuan" title="Chinese Yuan">
-            <img src="icons/YuanOrange.png" alt="Yuan"> ${pkg.price_yuan}
+          <span class="currency" title="Chinese Yuan">
+            <img src="icons/yuan.png" alt="Yuan"> ${pkg.price_yuan}
           </span>
-          <span class="currency currency-baht" title="Thai Baht">
-            <img src="icons/BahtBlue.png" alt="Baht"> ${pkg.price_baht}
+          <span class="currency" title="Thai Baht">
+            <img src="icons/baht.png" alt="Baht"> ${pkg.price_baht}
           </span>
-          <span class="currency currency-kyat" title="Myanmar Kyat">
-            <img src="icons/KyatPink.png" alt="MMK"> ${pkg.price_mmk}
+          <span class="currency" title="Myanmar Kyat">
+            <img src="icons/mmk.png" alt="MMK"> ${pkg.price_mmk}
           </span>
         </div>
       </p>
@@ -305,7 +279,7 @@ function createPackageElement(pkg) {
     `;
 
     return packageDiv;
-}
+  }
 
   function renderPackages() {
     const container = document.querySelector(".container");
