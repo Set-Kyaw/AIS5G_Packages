@@ -106,18 +106,6 @@
       white-space: nowrap;
     }
 
-      .currency_main img {
-      width: 22px;
-      height: 22px;
-    }
-
-    .currency_main {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      white-space: nowrap;
-    }
-
     .currency img {
       width: 16px;
       height: 16px;
@@ -270,7 +258,7 @@
       <h2>AIS5G Internet</h2>
       <p><strong>${pkg.gb}</strong></p>
       <p class="price">
-        <img class="currency_main" src="icons/DollarYellow.png" alt="Dollar"><strong>$${pkg.price_usd}</strong>
+        <img src="icons/DollarYellow.png" alt="Dollar" width="22px" heigh="22px" ><strong>$${pkg.price_usd}</strong>
         <div class="currency-line">
           <span class="currency" title="Chinese Yuan">
             <img src="icons/YuanOrange.png" alt="Yuan"> ${pkg.price_yuan}
